@@ -32,7 +32,7 @@ export default function LegalPage({ type }: { type: "Privacy" | "Terms" }) {
             </div>
             <AnimatePresence>
               {openId === rule.id && (
-                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={springConfig} className="overflow-hidden">
+                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={springConfig as any} className="overflow-hidden">
                   <p className="mt-4 text-ink/70 leading-relaxed text-lg bg-sand/20 p-6 rounded-2xl">{rule.long}</p>
                 </motion.div>
               )}

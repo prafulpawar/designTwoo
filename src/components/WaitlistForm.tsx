@@ -12,7 +12,7 @@ const stepVariants = {
 // Internal elements staggered fade-in-up
 const itemVariants = {
   enter: { opacity: 0, y: 20 },
-  center: { opacity: 1, y: 0, transition: springConfig },
+  center: { opacity: 1, y: 0, transition: springConfig as any },
 };
 
 const INTERESTS = [
@@ -102,7 +102,7 @@ export default function WaitlistForm() {
             />
             <motion.div variants={itemVariants} className="mt-4">
               <motion.button 
-                variants={interactiveItem} initial="rest" whileHover="hover" whileTap="tap" 
+                variants={interactiveItem as any} initial="rest" whileHover="hover" whileTap="tap" 
                 onClick={() => paginate(1)} 
                 disabled={!data.neighborhood} 
                 className="bg-terracotta text-paper py-4 px-10 rounded-full font-medium text-lg w-fit disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 shadow-lg shadow-terracotta/20"
@@ -138,7 +138,7 @@ export default function WaitlistForm() {
                   >
                     <motion.span 
                       animate={{ scale: isSelected ? 1.2 : 1 }} 
-                      transition={springConfig} 
+                      transition={springConfig as any} 
                       className="text-4xl"
                     >
                       {item.icon}
@@ -154,7 +154,7 @@ export default function WaitlistForm() {
             <motion.div variants={itemVariants} className="flex justify-between items-center mt-6">
               <button onClick={() => paginate(-1)} className="text-ink/50 hover:text-ink transition-colors font-medium px-4 py-2">Back</button>
               <motion.button 
-                variants={interactiveItem} initial="rest" whileHover="hover" whileTap="tap" 
+                variants={interactiveItem as any} initial="rest" whileHover="hover" whileTap="tap" 
                 onClick={() => paginate(1)} 
                 disabled={data.interests.length === 0} 
                 className="bg-terracotta text-paper py-4 px-10 rounded-full font-medium text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 shadow-lg shadow-terracotta/20"
@@ -186,7 +186,7 @@ export default function WaitlistForm() {
             <motion.div variants={itemVariants} className="flex justify-between items-center mt-6">
               <button onClick={() => paginate(-1)} className="text-ink/50 hover:text-ink transition-colors font-medium px-4 py-2">Back</button>
               <motion.button 
-                variants={interactiveItem} initial="rest" whileHover="hover" whileTap="tap" 
+                variants={interactiveItem as any} initial="rest" whileHover="hover" whileTap="tap" 
                 onClick={() => paginate(1)} 
                 disabled={!data.email.includes("@")} 
                 className="bg-forest text-paper py-4 px-10 rounded-full font-medium text-lg disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-forest/20"
@@ -231,7 +231,7 @@ export default function WaitlistForm() {
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            transition={springConfig}
+            transition={springConfig as any}
             className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-ink text-paper px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 z-50 font-medium whitespace-nowrap"
           >
             <div className="w-2 h-2 bg-terracotta rounded-full" />

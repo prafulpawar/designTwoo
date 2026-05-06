@@ -23,7 +23,7 @@ export default function AboutPage() {
         ))}
       </div>
 
-      {/* Pinned Visual */}
+      {/* Pinned Viual */}
       <div className="w-full md:w-1/2 sticky top-[20vh] h-[60vh] hidden md:block">
         <motion.div animate={{ backgroundColor: activeStep === 1 ? "#E56B55" : activeStep === 2 ? "#2A4B46" : "#2D2A26" }} transition={{ duration: 0.8, ease: "easeInOut" }} className="w-full h-full rounded-[3rem] shadow-tactile flex items-center justify-center overflow-hidden relative">
           <motion.div key={activeStep} initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={springConfig} className="text-9xl">

@@ -2,12 +2,16 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { springConfig, staggerContainer, fadeInUp, interactiveItem } from "../lib/animations";
 
-type Intent = "Support" | "Partner" | "Feedback" | null;
+// 1. Separate the available options from the nullable state
+type IntentOption = "Support" | "Partner" | "Feedback";
+type IntentState = IntentOption | null;
 
 export default function ContactPage() {
-  const [intent, setIntent] = useState<Intent>(null);
+  // 2. State can still be null
+  const [intent, setIntent] = useState<IntentState>(null);
 
-  const intents: Intent[] = ["Support", "Partner", "Feedback"];
+  // 3. The array of options strictly contains the strings
+  const intents: IntentOption[] = ["Support", "Partner", "Feedback"];
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-32 min-h-screen">
@@ -36,7 +40,10 @@ export default function ContactPage() {
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={springConfig}>
                   <form className="p-6 flex flex-col gap-4 border-t border-sand" onSubmit={(e) => e.preventDefault()}>
                     <input type="email" placeholder="Your Email" className="p-4 rounded-xl bg-paper border border-sand focus:border-forest outline-none" required />
+                    
+                    {/* TS now knows 'type' will never be null here */}
                     <textarea placeholder={`Tell us about your ${type.toLowerCase()}...`} rows={4} className="p-4 rounded-xl bg-paper border border-sand focus:border-forest outline-none resize-none" required />
+                    
                     <motion.button variants={interactiveItem} whileHover="hover" whileTap="tap" className="bg-forest text-paper py-3 px-8 rounded-full font-medium w-fit">Send Message</motion.button>
                   </form>
                 </motion.div>

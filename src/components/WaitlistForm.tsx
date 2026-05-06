@@ -5,7 +5,7 @@ import { springConfig, interactiveItem } from "../lib/animations";
 // Horizontal Slide Variants (Step Container)
 const stepVariants = {
   enter: (dir: number) => ({ x: dir > 0 ? 400 : -400, opacity: 0 }),
-  center: { x: 0, opacity: 1, transition: { duration: 0.5, type: "spring", bounce: 0.2, staggerChildren: 0.1 } },
+  center: { x: 0, opacity: 1, transition: { duration: 0.5, type: "spring" as const, bounce: 0.2, staggerChildren: 0.1 } },
   exit: (dir: number) => ({ x: dir < 0 ? 400 : -400, opacity: 0, transition: { duration: 0.3 } }),
 };
 

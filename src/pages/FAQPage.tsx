@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { staggerContainer, fadeInUp, springConfig } from "../lib/animations";
+import { staggerContainer, fadeInUp } from "../lib/animations";
 
 const FAQS = [
   { id: "1", q: "Is this a dating app?", a: "No. This is strictly for platonic, meaningful adult friendships. We enforce a 'Respect the Vibe' policy.", color: "bg-[#F3EBE1]" },
